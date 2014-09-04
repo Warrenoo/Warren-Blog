@@ -12,6 +12,6 @@ class BlogsController < ApplicationController
 
   private
   def set_blog
-    @blog = Blog.find_by(id: params[:id])
+    @blog = Blog.find_by(id: params[:id]) || Blog.new
   end
 end

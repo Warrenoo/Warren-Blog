@@ -54,17 +54,31 @@ body {
   padding: 0 2px;
 }
 
-.recommend .panel {
+.panel {
   border-radius: 0px;
 }
 
-.recommend .panel .panel-title {
+.panel .panel-title {
   font-size: 23px;
 }
 
-.recommend .panel .panel-meta {
+.panel .panel-meta {
   padding-left: 15px;
   color: #c1c0c0;
   line-height: 18px;
   font-size: 14px;
+}
+
+.panel .panel-footer {
+  background-color: white;
+}
+
+.blog_tags ul{
+  padding-left: 0px;
+}
+
+.blog_tags ul li {
+  display: inline;
+  margin-right: 10px;
+  font-size: x-small;
 }

@@ -53,15 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resource :blogs do
-    member do
-    end
-    collection do
-    end
-  end
+  resources :blogs
 
-  resource :home, only: :index
+  resources :home, only: :index
 
-  get '/' => 'home#index'
   root 'home#index'
 end

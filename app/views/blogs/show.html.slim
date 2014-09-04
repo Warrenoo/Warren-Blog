@@ -1,0 +1,19 @@
+.row
+  .panel
+    .panel-heading
+      .panel-title
+        = @blog.title
+    .panel-meta
+      .blog_tags
+        - if @blog.tags.present?
+          ul
+            li.glyphicon.glyphicon-bookmark
+            - (@blog.tags*3).each do |tag|
+              li
+                = link_to tag.name, "#", class: "label label-default"
+        ul
+          li.glyphicon.glyphicon-time
+          li
+            = @blog.created_at || "2014/12/1"
+    .panel-body
+      = @blog.markdown_content || MK.render(@blog.content)
