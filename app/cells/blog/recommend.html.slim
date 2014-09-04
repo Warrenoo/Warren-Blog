@@ -1,0 +1,16 @@
+.row.recommend
+  - @recommend_blogs.each do |blog|
+    .panel
+      .panel-heading
+        .panel-title
+          = link_to blog.title, blog
+      .panel-meta
+        = blog.created_at || "2014/12/1"
+      .panel-body
+        = blog.content
+  .panel
+    .panel-body style="text-align: center;"
+      - if @recommend_blogs.size > 0
+        = link_to "更多", "#"
+      - else
+        = "还有没有文章..."

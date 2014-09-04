@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class BlogCellTest < Cell::TestCase
-  test "show" do
-    invoke :show
+  test "recommend" do
+    invoke :recommend
     assert_select "p"
   end
   

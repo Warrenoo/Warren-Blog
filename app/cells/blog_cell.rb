@@ -1,6 +1,8 @@
 class BlogCell < Cell::Rails
 
-  def show
+  def recommend
+    @recommend_blogs = [Blog.new] * 10
+    #@recommend_blogs = Blog.all
     render
   end
 

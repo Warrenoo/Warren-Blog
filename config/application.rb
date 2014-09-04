@@ -15,6 +15,8 @@ module WarrenBlog
     config.active_record.default_timezone = :local
     config.time_zone = 'Beijing'
 
+    #config.force_ssl = true
+
     # 设置语言
     config.i18n.default_locale = "zh-CN"
     I18n.enforce_available_locales = false

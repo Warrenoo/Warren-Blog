@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$font-size-base: 15px;
+
+@import "bootstrap";
+
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+  background: #e7e7e7;
+  color: #666666;
+}
+
+.blog_nav{
+  margin-bottom: 20px;
+  background-color: white;
+  border: 0px;
+}
+
+.footer {
+  border-top: 1px solid #E7E7E7;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #777777;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.bs-docs-footer-links {
+  padding-left: 0;
+  margin-top: 20px;
+  color: #999;
+}
+
+.bs-docs-footer-links li:first-child {
+  padding-left: 0;
+}
+
+.bs-docs-footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+
+.recommend .panel {
+  border-radius: 0px;
+}
+
+.recommend .panel .panel-title {
+  font-size: 23px;
+}
+
+.recommend .panel .panel-meta {
+  padding-left: 15px;
+  color: #c1c0c0;
+  line-height: 18px;
+  font-size: 14px;
+}
