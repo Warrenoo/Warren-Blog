@@ -5,6 +5,10 @@
         .panel-heading 博文
         .panel-body
           .form_group.row
+            label.col-md-1 标签
+            .col-md-11
+              = f.select :tag_ids, tags, {}, class: "use_select2", multiple: "multiple"
+          .form_group.row
             label.col-md-1 标题
             .col-md-11
               = f.text_field :title, class: "form-control"

@@ -13,8 +13,9 @@ class Blog < ActiveRecord::Base
   # 未发布
   scope :unpublish, -> { where publish: false, active: true }
 
-  def active; !super.zero?; end
-  def publish; !super.zero?; end
+  #accepts_nested_attributes_for :tag_blogs
+  #def active; !super.zero?; end
+  #def publish; !super.zero?; end
 
   private
 

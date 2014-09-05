@@ -1,1 +1,6 @@
-.ddd style="height: 500px;background-color: grey;"
+.panel.panel-default
+  .panel-header
+    = image_tag "title.jpg", style: "width: 100%;"
+  .panel-body
+    = render_cell :tag, :list
+    = render_cell :blog, :lately

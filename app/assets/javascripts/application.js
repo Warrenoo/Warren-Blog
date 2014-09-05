@@ -12,7 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.turbolinks
+//= require select2
+//= require jquery.goup.min
 //= require bootstrap
 //= require bootstrap-markdown
-//= require_tree .
+
+$(function(){
+  $.goup();
+  select_select2($(".use_select2"));
+});
+
+function select_select2($select){
+  $select.css("width","100%");
+  $select.select2({
+    placeholder: "请选择",
+    allowClear: true,
+    formatNoMatches: function(term){
+      return "未找到匹配项";
+    }
+  });
+}

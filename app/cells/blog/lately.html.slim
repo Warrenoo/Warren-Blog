@@ -1,0 +1,5 @@
+h4 最近博文
+ul.list-group
+  - @lately_blogs.each do |blog|
+    li.list-group-item
+      = blog.title.truncate(12)
