@@ -53,9 +53,21 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :blogs
+  resources :blogs do
+    member do
+      post 'update_publish'
+    end
+  end
 
   resources :home, only: :index
+
+  namespace :admin do
+    resources :session, only: :create
+  end
+
+  get 'admin/login' => 'admin/session#index'
+  get 'admin/logout' => 'admin/session#destroy'
+
 
   root 'home#index'
 end

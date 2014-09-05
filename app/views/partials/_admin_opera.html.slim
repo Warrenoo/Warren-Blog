@@ -1,0 +1,8 @@
+- if is_admin?
+  .admin_opera_btn
+    = link_to "修改", edit_blog_path(blog), class: "btn btn-warning"
+    - if blog.active
+      - text = blog.publish ? "取消发布" : "发布"
+      - klass = blog.publish ? "btn-warning" : "btn-success"
+      = link_to text, update_publish_blog_path(blog), "data-method" => "post", class: "btn #{klass}", "data-confirm" => "确定#{text}？"
+      = link_to "删除", blog, "data-method" => "delete", class: "btn btn-danger", "data-confirm" => "确定删除？"

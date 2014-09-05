@@ -20,5 +20,8 @@ module WarrenBlog
     # 设置语言
     config.i18n.default_locale = "zh-CN"
     I18n.enforce_available_locales = false
+
+
+    config.admin_settings = YAML::load_file(Rails.root.join("config", "secrets.yml"))[Rails.env]
   end
 end

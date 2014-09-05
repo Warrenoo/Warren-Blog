@@ -1,0 +1,18 @@
+= form_for @blog do |f|
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading 博文
+        .panel-body
+          .form_group.row
+            label.col-md-1 标题
+            .col-md-11
+              = f.text_field :title, class: "form-control"
+          .form_group.row
+            label.col-md-1 内容
+            .col-md-11
+              = f.text_area :content, class: "form-control", rows: 25, "data-provide" => "markdown"
+        .panel-footer
+          button.btn.btn-success style="margin-right: 10px;" 提交
+          - if @blog.id.present?
+            = link_to "返回", @blog, class: "btn btn-default"

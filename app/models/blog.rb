@@ -6,17 +6,15 @@ class Blog < ActiveRecord::Base
 
   before_save :save_markdown
 
-  def id
-    super || 1
-  end
+  # 未删除
+  scope :actived, -> { where active: true }
+  # 已发布
+  scope :publish, -> { where publish: true, active: true }
+  # 未发布
+  scope :unpublish, -> { where publish: false, active: true }
 
-  def content
-    super || "这篇文章什么内容都没有"
-  end
-
-  def title
-    super || "这个文章没有标题"
-  end
+  def active; !super.zero?; end
+  def publish; !super.zero?; end
 
   private
 

@@ -17,6 +17,7 @@
 $font-size-base: 15px;
 
 @import "bootstrap";
+@import "bootstrap-markdown";
 
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
@@ -81,4 +82,12 @@ body {
   display: inline;
   margin-right: 10px;
   font-size: x-small;
+}
+
+.form_group {
+  margin-bottom: 15px;
+}
+
+.admin_opera_btn a {
+  margin-right: 10px;
 }

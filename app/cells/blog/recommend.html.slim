@@ -9,20 +9,21 @@
           - if blog.tags.present?
             ul
               li.glyphicon.glyphicon-bookmark
-              - (blog.tags*3).each do |tag|
+              - blog.tags.each do |tag|
                 li
                   = link_to tag.name, "#", class: "label label-default"
           ul
             li.glyphicon.glyphicon-time
             li
-              = blog.created_at || "2014/12/1"
+              = datetime_format blog.created_at
       .panel-body
-        = truncate_html(MK.render(blog.content), break_token: "<!-- truncate -->", length: 800, omission: '</br>...')
+        = html_split(blog.markdown_content)
       .panel-footer
-        = link_to "阅读全文", blog_path(blog), class: "btn btn-info"
+        = link_to "阅读全文", blog, class: "btn btn-info"
+
   .panel
     .panel-body style="text-align: center;"
-      - if @recommend_blogs.size > 0
+      - if @recommend_blogs.present?
         = link_to "更多", "#"
       - else
         = "还有没有文章..."
