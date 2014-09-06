@@ -66,6 +66,8 @@ Rails.application.routes.draw do
     resources :session, only: :create
   end
 
+  delete 'admin/clear_cache' => 'home#clear_cache'
+
   get 'admin/login' => 'admin/session#index'
   get 'admin/logout' => 'admin/session#destroy'
 

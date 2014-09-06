@@ -1,3 +1,5 @@
+- content_for :title
+  = @blog.title
 .row
   .panel
     .panel-heading
@@ -18,4 +20,9 @@
     .panel-body
       = raw @blog.markdown_content
     .panel-footer
+
+      /*管理员操作按钮组*/
       = render partial: 'partials/admin_opera', locals: {blog: @blog}
+
+/*评论*/
+= render 'partials/review'

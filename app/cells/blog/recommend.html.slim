@@ -24,6 +24,6 @@
   .panel
     .panel-body style="text-align: center;"
       - if @recommend_blogs.present?
-        = link_to "更多", "#"
+        = link_to "更多", blogs_path
       - else
         = "还有没有文章..."

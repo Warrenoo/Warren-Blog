@@ -1,5 +1,7 @@
 # coding: utf-8
 class BlogCell < Cell::Rails
+  cache :recommend
+  cache :lately
 
   helper TruncateHtmlHelper
   helper ApplicationHelper

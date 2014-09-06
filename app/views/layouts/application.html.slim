@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 html lang="zh-CN"
   head
-    title = yield(:title) || "W-BLOG"
+    title
+      |Warrenoo
+      = " - #{yield(:title)}" if yield(:title)
     meta name="viewport" content="width=device-width, initial-scale=1"
-    = javascript_include_tag :application 
-    = stylesheet_link_tag :application 
+    = javascript_include_tag :application
+    = stylesheet_link_tag :application
     = csrf_meta_tags 
     = yield :head
   body

@@ -22,6 +22,7 @@ $(function(){
   $.goup();
   select_select2($(".use_select2"));
   show_tooltip($("[data-toggle=tooltip]"));
+  set_title_active();
 });
 
 function select_select2($select){
@@ -38,3 +39,9 @@ function select_select2($select){
 function show_tooltip($obj){
   $obj.tooltip();
 };
+
+//页面头部列表根据路径变化
+function set_title_active(){
+  path = location.pathname
+  $("#warrenoo-nav > ul > li > a").filter("[href='"+path+"']").parent().addClass("active");
+}

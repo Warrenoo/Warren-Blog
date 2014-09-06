@@ -5,6 +5,8 @@ class Tag < ActiveRecord::Base
   scope :desc, -> { order created_at: :desc }
 
   class << self
+    
+    # 按关联博文数量排序
     def hots
       sql = <<-SQL
         SELECT t.* FROM tags AS t
@@ -18,6 +20,7 @@ class Tag < ActiveRecord::Base
       SQL
       Tag.find_by_sql(sql)
     end
+
   end
 
 end
