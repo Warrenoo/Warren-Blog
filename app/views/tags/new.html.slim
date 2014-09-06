@@ -1,0 +1,19 @@
+- content_for :title
+  | 写博文
+
+= form_for @tag do |f|
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading 标签
+        .panel-body
+          .form_group.row
+            label.col-md-1 名称
+            .col-md-11
+              = f.text_field :name, class: "form-control"
+          .form_group.row
+            label.col-md-1 简介
+            .col-md-11
+              = f.text_area :desc, class: "form-control"
+        .panel-footer
+          button.btn.btn-success style="margin-right: 10px;" 提交

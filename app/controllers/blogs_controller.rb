@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   before_filter :set_blog, only: [:show, :edit, :update, :destroy, :update_publish]
 
   def index
-    @blogs = Blog.actived.group("created_at")
+    @blogs = Blog.publish.desc.group_by{|b| b.created_at.strftime("%Y-%m") }
   end
 
   def new

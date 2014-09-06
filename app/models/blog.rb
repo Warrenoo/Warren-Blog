@@ -6,6 +6,7 @@ class Blog < ActiveRecord::Base
 
   before_save :save_markdown
 
+  scope :desc, -> { order created_at: :desc }
   # 未删除
   scope :actived, -> { where active: true }
   # 已发布

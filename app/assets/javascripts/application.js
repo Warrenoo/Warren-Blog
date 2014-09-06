@@ -21,6 +21,7 @@
 $(function(){
   $.goup();
   select_select2($(".use_select2"));
+  show_tooltip($("[data-toggle=tooltip]"));
 });
 
 function select_select2($select){
@@ -33,3 +34,7 @@ function select_select2($select){
     }
   });
 }
+
+function show_tooltip($obj){
+  $obj.tooltip();
+};

@@ -1,8 +1,13 @@
-h4 标签分类
-ul.list-group
-  - @tags.each do |tag|
-    li.list-group-item
-      a href="#"
-        span class="badge pull-right"
-          = tag.blogs.size
-        = tag.name
+.panel.panel-default
+  .panel-body
+    h4 标签
+    ul.list-group
+      - if @tags.present?
+        - @tags.each do |tag|
+          li.list-group-item
+            a href="#"
+              span class="badge pull-right"
+                = tag.blogs.size
+              = tag.name
+      - else
+        small 还没有标签...
