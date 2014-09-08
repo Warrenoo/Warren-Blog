@@ -58,6 +58,9 @@ Rails.application.routes.draw do
     member do
       post 'update_publish'
     end
+    collection do
+      get 'admin_index'
+    end
   end
 
   resources :home, only: :index

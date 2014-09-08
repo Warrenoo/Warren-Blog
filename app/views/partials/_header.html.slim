@@ -19,12 +19,22 @@ nav.navbar.navbar-default.blog_nav role="navigation"
           a href="#" ABOUT ME
         - if is_admin?
           li.dropdown
-            a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+            a href="#" class="dropdown-toggle" data-toggle="dropdown"
               |管理员
               span.caret
             ul.dropdown-menu role="menu"
               li
-                a href="/blogs/new" 写博客
+                a href="/blogs/new" 写博文
+              li
                 a href="/tags/new" 新标签
+              /*li.dropdown-submenu*/
+                /*a href="#" class="dropdown-toggle" data-toggle="dropdown"*/
+                  /*|管理*/
+                  /*span.caret*/
+                /*ul.dropdown-menu role="menu"*/
+                  /*li*/
+                    /*a href="/blogs/admin_index" 博文管理*/
+              li
                 a href="/admin/clear_cache" data-method="delete" 清空缓存
+              li
                 a href="/admin/logout" 退出

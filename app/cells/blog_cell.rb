@@ -10,7 +10,9 @@ class BlogCell < Cell::Rails
 
   # 缓存
   %w(recommend lately index).each do |key|
-    cache key.to_sym {|opts| cache_key_for_blogs(key) }
+    cache key.to_sym do |opts|
+      cache_key_for_blogs(key)
+    end
   end
 
   def recommend

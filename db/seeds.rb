@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+t = Tag.first
+(1..100).each do
+  b=Blog.first.dup
+  if b.save
+    tb = TagBlog.create(tag_id: t.id, blog_id: b.id)
+  end
+end

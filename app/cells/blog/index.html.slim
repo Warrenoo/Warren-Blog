@@ -2,10 +2,11 @@
   .panel.blogs-list
     .panel-body
       dl.dl-horizontal
-        - @blogs.each do |date, blogs|
-          dt
-            = date
-            dd
-            - blogs.each do |blog|
+        - if @blogs.present?
+          - @blogs.each do |date, blogs|
+            dt = date
               dd
-                = link_to blog.title, blog
+              - blogs.each do |blog|
+                dd = link_to blog.title, blog
+        - else
+          h4 还没有发布博文...

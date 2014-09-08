@@ -12,12 +12,10 @@
             ul
               li.glyphicon.glyphicon-bookmark
               - @blog.tags.each do |tag|
-                li
-                  = link_to tag.name, "#", class: "label label-default"
+                li = link_to tag.name, "#", class: "label label-default"
           ul
             li.glyphicon.glyphicon-time
-            li
-              = datetime_format @blog.created_at
+            li = datetime_format @blog.created_at
       .panel-body
         = raw @blog.markdown_content
 

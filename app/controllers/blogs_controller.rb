@@ -1,7 +1,7 @@
 # coding: utf-8
 class BlogsController < ApplicationController
 
-  before_action :verify_login, only: [:new, :edit, :create, :destroy, :update, :update_publish]
+  before_action :verify_login, only: [:new, :edit, :create, :destroy, :update, :update_publish, :admin_index]
   before_filter :set_blog, only: [:show, :edit, :update, :destroy, :update_publish]
 
   def index
@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
 
   def destroy
     if @blog.update(active: false, publish: false)    # 删除同时修改发布状态为false
-      redirect_to blogs_path, notice: "删除成功"
+      redirect_to blogs_admin_index_path, notice: "删除成功"
     else
       redirect_to :back, alert: "删除失败"
     end
@@ -52,6 +52,11 @@ class BlogsController < ApplicationController
     else
       render 'edit', alert: "修改失败"
     end
+  end
+
+  def admin_index
+    @blogs = Blog.order(id: :desc).page(params[:page])
+    render layout: 'admin'
   end
 
   private

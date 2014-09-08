@@ -10,12 +10,10 @@
             ul
               li.glyphicon.glyphicon-bookmark
               - blog.tags.each do |tag|
-                li
-                  = link_to tag.name, "#", class: "label label-default"
+                li = link_to tag.name, "#", class: "label label-default"
           ul
             li.glyphicon.glyphicon-time
-            li
-              = datetime_format blog.created_at
+            li = datetime_format blog.created_at
       .panel-body
         = html_split(blog.markdown_content)
       .panel-footer
@@ -26,4 +24,4 @@
       - if @recommend_blogs.present?
         = link_to "更多", blogs_path
       - else
-        = "还有没有文章..."
+        = "还没有发布博文..."

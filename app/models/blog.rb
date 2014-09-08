@@ -17,6 +17,13 @@ class Blog < ActiveRecord::Base
   #accepts_nested_attributes_for :tag_blogs
   #def active; !super.zero?; end
   #def publish; !super.zero?; end
+  def status
+    if active
+      publish ? "已发布" : "未发布"
+    else
+      "已删除"
+    end
+  end
 
   private
 
