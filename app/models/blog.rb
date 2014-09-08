@@ -23,7 +23,7 @@ class Blog < ActiveRecord::Base
   # 提交或修改内容时将内容转成markdown格式存储起来
   # 降低页面渲染压力
   def save_markdown
-    self.markdown_content = MK.render self.content
+    self.markdown_content = MK.render(self.content) if self.content_changed?
   end
 
 end

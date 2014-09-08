@@ -1,13 +1,5 @@
 - content_for :title
   |博文
-.row
-  .panel.blogs-list
-    .panel-body
-      dl.dl-horizontal
-        - @blogs.each do |date, blogs|
-          dt
-            = date
-            dd
-            - blogs.each do |blog|
-              dd
-                = link_to blog.title, blog
+
+- cache(cache_key_for_blogs("index"))
+  = render_cell :blog, :index

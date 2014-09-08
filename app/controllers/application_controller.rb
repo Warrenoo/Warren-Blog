@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  
   protect_from_forgery with: :exception
   helper_method :is_admin?
+
+  class BlogNoExist < StandardError; end
+  rescue_from BlogNoExist, with: :render_blog_no_exist
 
   def verify_login
     to_login unless session[:admin_mode]
@@ -15,5 +19,10 @@ class ApplicationController < ActionController::Base
 
   def is_admin?
     session[:admin_mode]
+  end
+
+  # 错误页面跳转
+  def render_blog_no_exist
+    render file: File.join(Rails.root, "public/blog_no_exist.html"), status: 500, layout: false
   end
 end

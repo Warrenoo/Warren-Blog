@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
   before_filter :set_blog, only: [:show, :edit, :update, :destroy, :update_publish]
 
   def index
-    @blogs = Blog.publish.desc.group_by{|b| b.created_at.strftime("%Y-%m") }
   end
 
   def new
@@ -59,5 +58,6 @@ class BlogsController < ApplicationController
   def set_blog
     record = is_admin? ? Blog : Blog.publish
     @blog = record.find_by(id: params[:id])
+    raise BlogNoExist if @blog.blank?
   end
 end
