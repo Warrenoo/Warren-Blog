@@ -4,7 +4,8 @@
       dl.dl-horizontal
         - if @blogs.present?
           - @blogs.each do |date, blogs|
-            dt = date
+            dt
+              = date
               dd
               - blogs.each do |blog|
                 dd = link_to blog.title, blog
