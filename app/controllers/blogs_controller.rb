@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
 
   def destroy
     if @blog.update(active: false, publish: false)    # 删除同时修改发布状态为false
-      redirect_to blogs_admin_index_path, notice: "删除成功"
+      redirect_to admin_index_blogs_path, notice: "删除成功"
     else
       redirect_to :back, alert: "删除失败"
     end
@@ -55,7 +55,8 @@ class BlogsController < ApplicationController
   end
 
   def admin_index
-    @blogs = Blog.order(id: :desc).page(params[:page])
+    @params = params[:search_key] || {}
+    @blogs = Blog.search(params[:search_key]).includes(:tags).order(id: :desc).page(params[:page])
     render layout: 'admin'
   end
 

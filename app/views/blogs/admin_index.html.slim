@@ -1,26 +1,33 @@
 - content_for :title
   |管理博文
-table.table.table-hover.table-bordered.table-condensed
-  tr
-    th ID
-    th 标题
-    th 标签
-    th 创建时间
-    th 状态
-    th 操作
-  - @blogs.each do |blog|
-    tr
-      td = blog.id
-      td = link_to blog.title, blog
-      td = blog.tags.map(&:name).join(";")
-      td = datetime_format blog.created_at
-      td = blog.status
-      td
-        .admin_opera_btn
-          = link_to "修改", edit_blog_path(blog), class: "btn btn-warning"
-          - if blog.active
-            - text = blog.publish ? "取消发布" : "发布"
-            - klass = blog.publish ? "btn-warning" : "btn-success"
-            = link_to text, update_publish_blog_path(blog), "data-method" => "post", class: "btn #{klass}", "data-confirm" => "确定#{text}？"
-            = link_to "删除", blog, "data-method" => "delete", class: "btn btn-danger", "data-confirm" => "确定删除？"
-= will_paginate @blogs, renderer: BootstrapPagination::Rails, :previous_label => '上一页'.html_safe, :next_label => '下一页'.html_safe
+.panel.panel-default
+  .panel-heading 
+    h3 管理博文
+  .panel-body
+    form.form-horizontal role="form" action="admin_index"
+      .form-group
+        label.col-md-1.control-label 状态
+        .col-md-3
+          = select_tag "search_key[status]", options_for_select(Blog::STATUS,@params[:status]), class: "form-control"
+        .col-md-1
+          button.btn.btn-info 提交
+    table.table.table-hover.table-bordered.table-condensed
+      tr
+        th ID
+        th 标题
+        th 标签
+        th 创建时间
+        th 状态
+        th 操作
+      - @blogs.each do |blog|
+        tr
+          td = blog.id
+          td = link_to blog.title, blog
+          td = blog.tags.map(&:name).join(";")
+          td = datetime_format blog.created_at
+          td = blog.status
+          td
+            = render partial: 'partials/admin_opera', locals: {blog: blog}
+    = will_paginate @blogs, renderer: BootstrapPagination::Rails, :previous_label => '上一页'.html_safe, :next_label => '下一页'.html_safe
+  .panel-footer
+    = link_to "新建", new_blog_path, class: "btn btn-success"

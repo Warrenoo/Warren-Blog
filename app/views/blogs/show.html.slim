@@ -1,26 +1,29 @@
 - content_for :title
   = @blog.title
-- cache(cache_key_for_blog(@blog))
-  .row
-    .panel
-      .panel-heading
-        .panel-title
-          = @blog.title
-      .panel-meta
-        .blog_tags
-          - if @blog.tags.present?
-            ul
-              li.glyphicon.glyphicon-bookmark
-              - @blog.tags.each do |tag|
-                li = link_to tag.name, "#", class: "label label-default"
+.row
+  .panel
+    .panel-heading
+      .panel-title
+        = @blog.title
+    .panel-meta
+      .blog_tags
+        ul
+          li.glyphicon.glyphicon-time
+          li = datetime_format @blog.created_at
+        - if @blog.tags.present?
           ul
-            li.glyphicon.glyphicon-time
-            li = datetime_format @blog.created_at
-      .panel-body
-        = raw @blog.markdown_content
+            li.glyphicon.glyphicon-bookmark
+            - @blog.tags.each do |tag|
+              li = link_to tag.name, tag, class: "label label-default"
+    .panel-body
+      = raw @blog.markdown_content
 
 /*管理员操作按钮组*/
-= render partial: 'partials/admin_opera', locals: {blog: @blog}
+- if is_admin?
+  .row
+    .panel
+      .panel-body
+        = render partial: 'partials/admin_opera', locals: {blog: @blog}
 
 /*评论*/
 = render 'partials/review'

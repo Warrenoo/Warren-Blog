@@ -6,14 +6,14 @@
           = link_to blog.title, blog
       .panel-meta
         .blog_tags
+          ul
+            li.glyphicon.glyphicon-time
+            li = datetime_format blog.created_at
           - if blog.tags.present?
             ul
               li.glyphicon.glyphicon-bookmark
               - blog.tags.each do |tag|
-                li = link_to tag.name, "#", class: "label label-default"
-          ul
-            li.glyphicon.glyphicon-time
-            li = datetime_format blog.created_at
+                li = link_to tag.name, tag, class: "label label-default"
       .panel-body
         = html_split(blog.markdown_content)
       .panel-footer

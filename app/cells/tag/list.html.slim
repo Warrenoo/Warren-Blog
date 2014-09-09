@@ -5,7 +5,7 @@
       - if @tags.present?
         - @tags.each do |tag|
           li.list-group-item
-            a href="#"
+            a href="/tags/#{tag.id}"
               span class="badge pull-right"
                 = tag.blogs.size
               = tag.name

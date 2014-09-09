@@ -4,6 +4,7 @@ class BlogCell < Cell::Rails
   helper TruncateHtmlHelper
   helper ApplicationHelper
   helper BlogsHelper
+
   include BlogsHelper
   # 输出缓存通知
   include Cell::Caching::Notifications

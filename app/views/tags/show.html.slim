@@ -1,0 +1,6 @@
+- content_for :title do
+  = @tag.name
+
+- cache (cache_key_for_tags("show-#{@tag.id}")) do
+  = render file: File.join(Rails.root, "/app/cells/blog/index")
+

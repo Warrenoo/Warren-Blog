@@ -1,5 +1,9 @@
 .row
-  .panel.blogs-list
+  .panel.blogs-list.panel-default
+    - if @tag.present?
+      .panel-heading 
+        |标签：
+        span.label.label-primary = @tag.name
     .panel-body
       dl.dl-horizontal
         - if @blogs.present?
