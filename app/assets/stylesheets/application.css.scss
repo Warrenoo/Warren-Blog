@@ -19,16 +19,7 @@ $font-size-base: 15px;
 @import "bootstrap-markdown";
 @import "select2";
 
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src:url('/assets/bootstrap/glyphicons-halflings-regular.eot');
-  src:url('/assets/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('/assets/bootstrap/glyphicons-halflings-regular.svg') format('svg'),
-    url('/assets/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
-    url('/assets/bootstrap/glyphicons-halflings-regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@include font-face(Glyphicons Halflings, 'bootstrap/glyphicons-halflings-regular', $asset-pipeline: true);
 
 body {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
