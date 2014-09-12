@@ -7,6 +7,9 @@ class HomeController < ApplicationController
   def index
   end
 
+  def about
+  end
+
   # 手动清理缓存，用于特殊情况
   # delete请求
   def clear_cache

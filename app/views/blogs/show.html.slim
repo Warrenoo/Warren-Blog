@@ -9,7 +9,7 @@
       .blog_tags
         ul
           li.glyphicon.glyphicon-time
-          li = datetime_format @blog.created_at
+          li = date_format @blog.created_at
         - if @blog.tags.present?
           ul
             li.glyphicon.glyphicon-bookmark
