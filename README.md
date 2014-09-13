@@ -1,4 +1,14 @@
-Warren-Blog
+个人博客项目 Warren-Blog
 ===========
+###开发环境
+Ruby1.9.3 + Rails4.1.4 + Mysql
 
-personal blog project
+###主要功能介绍
+- 发布，展示博文，支持markdown格式
+- 通过标签对博文进行分类
+- 通过Disqus对博文进行评论
+- 内置博客管理功能，包括对博文，标签的增删改查，以及控制博文的发布状态
+
+###其他
+- 使用`cells`模块化了各个功能区，并使用cache_key进行缓存。
+- 使用New Relic对项目进行进程管理和统计
