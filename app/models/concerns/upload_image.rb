@@ -77,8 +77,6 @@ module UploadImage
               paperclip_optimizer: {
                 jpegoptim: {max_quality: 95},
                 optipng: {level: 6},
-                jhead: false,
-                svgo: false
               }
             }
           },
