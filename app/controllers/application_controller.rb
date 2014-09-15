@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token, if: :is_xhr?
   helper_method :is_admin?
 
-  class BlogNoExist < StandardError; end
-  rescue_from BlogNoExist, with: :render_blog_no_exist
+  class InstanceNoExist < StandardError; end
+  rescue_from InstanceNoExist, with: :render_instance_no_exist
 
   def verify_login
     to_login unless session[:admin_mode]
@@ -27,7 +27,8 @@ class ApplicationController < ActionController::Base
   end
 
   # 错误页面跳转
-  def render_blog_no_exist
-    render file: File.join(Rails.root, "public/blog_no_exist.html"), status: 500, layout: false
+  def render_instance_no_exist
+    @error_name = controller_name.classify.constantize.model_name.human
+    render file: File.join(Rails.root, "public/instance_no_exist.html"), status: 500, layout: false
   end
 end

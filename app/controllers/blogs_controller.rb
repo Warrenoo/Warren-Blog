@@ -64,6 +64,6 @@ class BlogsController < ApplicationController
   def set_blog
     record = is_admin? ? Blog : Blog.publish
     @blog = record.find_by(id: params[:id])
-    raise BlogNoExist if @blog.blank?
+    raise InstanceNoExist if @blog.blank?
   end
 end

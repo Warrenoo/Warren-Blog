@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>没有找到<%= @error_name %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
@@ -58,9 +58,9 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>抱歉，博文不存在或者已被删除!</h1>
+      <h1>抱歉，<%= @error_name %>不存在或者已被删除!</h1>
     </div>
-    <p>请<%= link_to "返回", "/" %>浏览其他博文吧</p>
+    <p>请<%= link_to "返回", "/" %>浏览其他内容吧</p>
   </div>
 </body>
 </html>

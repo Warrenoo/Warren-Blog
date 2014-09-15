@@ -49,6 +49,7 @@ class TagsController < ApplicationController
   private
   def set_tag
     @tag = Tag.find_by(id: params[:id])
+    raise InstanceNoExist if @tag.blank?
   end
   
 end

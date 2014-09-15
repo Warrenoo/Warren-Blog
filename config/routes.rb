@@ -67,7 +67,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :resources do
+  resources :resources, only: [:create, :new, :index, :destroy] do
     collection do
       post 'create_images'
     end

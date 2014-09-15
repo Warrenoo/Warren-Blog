@@ -14,9 +14,6 @@ class ResourcesController < ApplicationController
     render layout: 'admin'
   end
 
-  def show
-  end
-
   # AJAX保存图片方法
   # @POST
   def create_images
@@ -40,6 +37,7 @@ class ResourcesController < ApplicationController
   private
   def set_resource
     @resource = Resource.find_by(id: params[:id])
+    raise InstanceNoExist if @resource.blank?
   end
   
 end
