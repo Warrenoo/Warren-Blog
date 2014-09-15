@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require select2
+//= require dropzone
 //= require jquery.goup.min
 //= require bootstrap
 //= require bootstrap-markdown

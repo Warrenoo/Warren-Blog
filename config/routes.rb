@@ -67,6 +67,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :resources do
+    collection do
+      post 'create_images'
+    end
+  end
   resources :home, only: :index
   get 'about' => 'home#about'
 

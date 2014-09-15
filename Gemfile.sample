@@ -62,3 +62,6 @@ gem 'coderay', '1.1.0'
 gem 'truncate_html'
 # 消除加载js的日志
 gem 'quiet_assets', group: :development
+gem 'paperclip'
+gem 'dropzonejs-rails'
+gem 'paperclip-optimizer'

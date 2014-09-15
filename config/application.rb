@@ -11,6 +11,7 @@ module WarrenBlog
 
     # assets包含的文件路径
     config.assets.paths << Rails.root.join('vendor', 'assets')
+    config.assets.image_optim = false
 
     config.active_record.default_timezone = :local
     config.time_zone = 'Beijing'

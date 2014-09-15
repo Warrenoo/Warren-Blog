@@ -1,0 +1,22 @@
+- content_for :title 
+  | 管理图片
+
+.row
+  .col-md-12
+    .panel
+      .panel-heading
+        ul.pull-right
+          = link_to "上传", new_resource_path, class: "btn btn-success entypo-plus"
+        h3 管理图片
+      .panel-body.gallery-env
+        .row
+          - @resources.each do |r|
+            .col-xs-2 style="margin-bottom: 20px;"
+              .thumbnail
+                a href="#{r.image}" target="_blank"
+                  = image_tag "#{r.image}", class: "img-rounded", style: "width: 150px;height: 100px;"
+                .caption
+                  small style="word-wrap: break-word;" = "#{request.server_name}#{r.image_simple}"
+                  p
+                    a.btn.btn-danger.btn-xs href="/resources/#{r.id}" data-method="delete" data-confirm="确定删除吗？" 删除
+= will_paginate @resources, :previous_label => '上一页'.html_safe, :next_label => '下一页'.html_safe, renderer: BootstrapPagination::Rails
