@@ -16,4 +16,9 @@ class HomeController < ApplicationController
     Rails.cache.clear
     redirect_to :back
   end
+
+  # 查询-使用google进行定址查询
+  def search
+    redirect_to "https://www.google.com.hk/#hl=zh-CN&q=site:blog.janecy.com+#{params[:key]}"
+  end
 end

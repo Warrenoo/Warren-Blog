@@ -74,6 +74,7 @@ Rails.application.routes.draw do
   end
   resources :home, only: :index
   get 'about' => 'home#about'
+  get 'search' => 'home#search'
 
   namespace :admin do
     resources :session, only: :create
