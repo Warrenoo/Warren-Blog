@@ -15,7 +15,7 @@
               - blog.tags.each do |tag|
                 li = link_to tag.name, tag, class: "label label-default"
       .panel-body
-        = raw html_split(blog.markdown_content)
+        = html_split(blog.markdown_content)
       .panel-footer
         = link_to "阅读全文", blog, class: "btn btn-info"
 

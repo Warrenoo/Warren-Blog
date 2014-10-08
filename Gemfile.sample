@@ -64,6 +64,7 @@ gem 'truncate_html'
 gem 'quiet_assets', group: :development
 gem 'newrelic_rpm', group: :production
 gem 'image_optim', '0.15.0'
+gem 'rouge', '1.7.2'
 gem 'paperclip'
 gem 'dropzonejs-rails'
 gem 'paperclip-optimizer'

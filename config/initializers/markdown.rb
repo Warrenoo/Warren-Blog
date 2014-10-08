@@ -3,7 +3,11 @@
 class HTMLwithCodeRay < Redcarpet::Render::HTML
   def block_code(code, language)
     language ||= :plaintext
-    CodeRay.scan(code, language).div(:tab_width=>2)
+    #CodeRay.scan(code, language).div(:tab_width=>2)
+    #formatter = Rouge::Formatters::HTML.new(line_numbers: true)
+    #lexer = Rouge::Lexer.find(language)
+    #formatter.format(lexer.lex(code))
+    Rouge.highlight(code, language, 'html')
   end
 end
 
@@ -14,5 +18,6 @@ class Markdown
   end
 end
 
+ROUGE_THEME = Rouge::Theme.find('thankful_eyes').render(scope: '.highlight')
 MK = Markdown.new
 

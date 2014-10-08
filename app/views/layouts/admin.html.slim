@@ -10,6 +10,8 @@ html lang="zh-CN"
     = stylesheet_link_tag :application 
     = csrf_meta_tags 
     = yield :head
+    css:
+      #{ROUGE_THEME}
   body
     = render "partials/header"
     .container
