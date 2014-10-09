@@ -106,8 +106,20 @@ a {
   font-size: 18px;
 }
 
+.highlight {
+  overflow: auto;
+}
+
 pre {
   background: #122b3b;
   border: 1px solid #122b3b;
   border-radius: 5px;
+}
+
+pre.lineno {
+  color: inherit;
+}
+
+td.gutter.gl {
+  background-color: inherit;
 }

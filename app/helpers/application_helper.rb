@@ -10,7 +10,9 @@ module ApplicationHelper
   end
 
   def html_split(content)
-    truncate_html(content, break_token: "<!-- more -->", length: 800, omission: '</br>...')
+    #truncate_html(content, break_token: "<!-- more -->", length: 800, omission: '</br>...')
+    content_arr = content.split("<!-- more -->")
+    content_arr.many? ? content_arr.first + "\n..." : content
   end
 
   def tags
