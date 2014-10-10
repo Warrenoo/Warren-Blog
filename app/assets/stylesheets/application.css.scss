@@ -119,8 +119,10 @@ pre {
 
 pre.lineno {
   color: inherit;
+  background-color: inherit;
+  border: inherit;
 }
 
 td.gutter.gl {
-  background-color: inherit;
+  background-color: #393946;;
 }
