@@ -1,0 +1,17 @@
+.bundle
+bin/*
+config/database.yml
+config/secrets.yml
+config/redis.yml
+tmp/
+db/*.sqlite3
+*.log*
+log/*
+public/assets
+public/images
+database.yml
+.DS_Store
+.ruby-version
+tags
+dump.rdb
+Gemfile
