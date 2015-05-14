@@ -23,24 +23,12 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 
   # 重启服务
-  task :start do
+  # starting
+  task :starting do
     on roles(fetch(:web)) do
       within current_path do
-        execute "cd #{current_path} && bundle exec thin start -C /etc/thin/Warren_19001.yml"
+        execute "cd #{current_path} && bundle exec thin restart -C /etc/thin/Warren_19001.yml"
       end
-    end
-  end
-
-  task :stop do
-    on roles(fetch(:web)) do
-      within current_path do
-        execute "cd #{current_path} && bundle exec thin stop -C /etc/thin/Warren_19001.yml"
-      end
-    end
-  end
-  task :restart do
-    on roles(fetch(:web)) do
-      execute "cd #{current_path} && bundle exec thin restart -C /etc/thin/Warren_19001.yml"
     end
   end
 
