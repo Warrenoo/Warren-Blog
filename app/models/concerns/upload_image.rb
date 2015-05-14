@@ -71,7 +71,7 @@ module UploadImage
       raise "no attrs for has_image_attrs" if attrs.empty?
       attrs.flatten.each do |attr|
 
-        has_attached_file attr, {
+        conf = {
           styles: {
             optimize: {
               paperclip_optimizer: {
@@ -83,9 +83,12 @@ module UploadImage
           default_style: :optimize,
           default_url: "/assets/images/missing.jpg",
           processors: [:thumbnail, :paperclip_optimizer],
-          url: "/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension",
-          path: ":rails_root/public/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
+          url: "/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
         }
+
+        conf[:path] = (Rails.env.production? ? File.expand_path("../shared", Rails.root.to_s) : ":rails_root") + "/public/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
+
+        has_attached_file attr, conf
 
         #validates_attachment attr.to_sym, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
         do_not_validate_attachment_file_type attr.to_sym  #不进行验证
