@@ -3,6 +3,7 @@ config/database.yml
 config/secrets.yml
 config/redis.yml
 tmp/
+bin/*
 db/*.sqlite3
 *.log*
 log/*
