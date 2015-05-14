@@ -24,7 +24,7 @@ namespace :deploy do
 
   # 重启服务
   task :restart do
-    on roles(fetch(:web)) do
+    on release_roles(:web) do
       execute "cd #{current_path} && bundle exec thin restart -C /etc/thin/Warren_19001.yml"
     end
   end
