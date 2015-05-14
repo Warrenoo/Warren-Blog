@@ -14,7 +14,7 @@ set :deploy_to, "/project/warren_blog"
 set :deploy_via, :remote_cache
 
 set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml Gemfile}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/images}
 
 set :keep_releases, 5
 
