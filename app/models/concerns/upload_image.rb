@@ -86,7 +86,7 @@ module UploadImage
           url: "/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
         }
 
-        conf[:path] = (Rails.env.production? ? File.expand_path("../shared", Rails.root.to_s) : ":rails_root") + "/public/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
+        conf[:path] = ":rails_root/public/images/#{self.name.underscore}/#{attr.to_s}/:style/:id.:extension"
 
         has_attached_file attr, conf
 
