@@ -4,7 +4,7 @@ require 'capistrano/console'
 lock '3.4.0'
 
 set :application, 'warrenoo_blog'
-set :deploy_user, 'root'
+set :deploy_user, 'work'
 
 set :scm, :git
 set :repo_url, 'https://github.com/Warrenoo/Warren-Blog.git'
