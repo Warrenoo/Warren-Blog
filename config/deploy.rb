@@ -13,8 +13,10 @@ set :deploy_to, "/project/warren_blog"
 
 set :deploy_via, :remote_cache
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/newrelic.yml puma.rb}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/images}
+
+set :puma_conf, "#{shared_path}/puma.rb"
 
 set :keep_releases, 5
 
@@ -22,13 +24,6 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
 
-  # 重启服务
-  task :restart do
-    on release_roles(:web) do
-      execute "cd #{current_path} && bundle exec thin restart -C /etc/thin/Warren_19001.yml"
-    end
-  end
-
 end
 
-after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing', 'puma:restart'

@@ -70,6 +70,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 gem 'image_optim', '0.15.0'
@@ -77,4 +78,6 @@ gem 'rouge', '1.7.2'
 gem 'paperclip'
 gem 'dropzonejs-rails'
 gem 'paperclip-optimizer'
+
+gem 'puma'
 

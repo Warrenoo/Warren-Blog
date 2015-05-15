@@ -1,5 +1,6 @@
 set :rails_env, :production
 set :branch, 'master'
+set :puma_env, fetch(:rails_env)
 
 role :app, %w{root@115.28.78.120}
 role :web, %w{root@115.28.78.120}
