@@ -2,9 +2,9 @@ set :rails_env, :production
 set :branch, 'master'
 set :puma_env, fetch(:rails_env)
 
-role :app, %w{work@115.28.78.120}
-role :web, %w{work@115.28.78.120}
-role :db,  %w{work@115.28.78.120}
+role :app, %w{work@115.28.78.120:2002}
+role :web, %w{work@115.28.78.120:2002}
+role :db,  %w{work@115.28.78.120:2002}
 
 # Custom SSH Options
 # ==================
