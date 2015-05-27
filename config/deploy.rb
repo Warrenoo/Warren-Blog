@@ -20,6 +20,9 @@ set :puma_conf, "#{shared_path}/puma.rb"
 
 set :keep_releases, 5
 
+set :rbenv_ruby, '2.1.2'
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+
 namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
