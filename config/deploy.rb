@@ -1,7 +1,7 @@
 require 'capistrano/scm'
 require 'capistrano/console'
 
-SHARE_FILES = %w{config/database.yml config/secrets.yml config/puma.rb}
+SHARE_FILES = %w{config/database.yml config/secrets.yml config/oneapm.yml config/puma.rb}
 
 lock '3.4.0'
 
@@ -32,6 +32,12 @@ namespace :deploy do
       SHARE_FILES.each do |f|
         upload! f, "#{fetch(:deploy_to)}/shared/#{f}"
       end
+    end
+  end
+
+  task :upload_oneapm do
+    on release_roles :app do |host|
+      upload! "config/oneapm.yml", "#{fetch(:deploy_to)}/shared/config/oneapm.yml"
     end
   end
 

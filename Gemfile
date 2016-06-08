@@ -79,4 +79,5 @@ gem 'dropzonejs-rails'
 gem 'paperclip-optimizer'
 
 gem 'puma'
+gem 'oneapm_rpm'
 
