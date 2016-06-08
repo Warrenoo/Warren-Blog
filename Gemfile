@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 
 gem 'jquery-turbolinks'
 
+gem 'therubyracer', platforms: :ruby
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -63,7 +65,6 @@ gem 'truncate_html'
 # 消除加载js的日志
 group :development do
   gem 'quiet_assets'
-  gem 'newrelic_rpm'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'

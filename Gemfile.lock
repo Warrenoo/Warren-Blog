@@ -90,6 +90,7 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.2)
+    libv8 (3.16.14.15)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -101,7 +102,6 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
-    newrelic_rpm (3.12.0.288)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -140,6 +140,7 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     redcarpet (3.1.2)
+    ref (2.0.0)
     rouge (1.7.2)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -179,6 +180,9 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.6.10)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -222,7 +226,6 @@ DEPENDENCIES
   jquery-turbolinks
   mysql2
   net-ldap
-  newrelic_rpm
   paperclip
   paperclip-optimizer
   puma
@@ -237,6 +240,7 @@ DEPENDENCIES
   slim (= 2.0.2)
   slim-rails (~> 2.1.2)
   spring
+  therubyracer
   truncate_html
   turbolinks
   twitter-typeahead-rails (~> 0.10.1)

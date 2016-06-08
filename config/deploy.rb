@@ -1,7 +1,7 @@
 require 'capistrano/scm'
 require 'capistrano/console'
 
-SHARE_FILES = %w{config/database.yml config/secrets.yml config/newrelic.yml puma.rb}
+SHARE_FILES = %w{config/database.yml config/secrets.yml config/puma.rb}
 
 lock '3.4.0'
 
@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :linked_files, SHARE_FILES
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/images}
 
-set :puma_conf, "#{shared_path}/puma.rb"
+set :puma_conf, "#{shared_path}/config/puma.rb"
 
 set :keep_releases, 5
 
