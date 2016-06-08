@@ -48,8 +48,6 @@ gem 'bootstrap-sass', "~> 3.1.1.0"
 gem "select2-rails", "~> 3.5.4"
 gem 'twitter-typeahead-rails', '~> 0.10.1'
 gem 'will_paginate-bootstrap'
-
-gem 'thin'
 gem 'net-ldap'
 
 gem 'sinatra', '>= 1.3.0', :require => nil
