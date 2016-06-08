@@ -20,6 +20,9 @@ module WarrenBlog
 
     # 设置语言
     config.i18n.default_locale = "zh-CN"
+
+    config.encoding = 'utf-8'
+
     I18n.enforce_available_locales = false
 
 

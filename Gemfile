@@ -1,5 +1,5 @@
 #source 'https://rubygems.org'
-source 'http://ruby.taobao.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -53,7 +53,7 @@ gem 'thin'
 gem 'net-ldap'
 
 gem 'sinatra', '>= 1.3.0', :require => nil
-gem 'rails-bootstrap-markdown', :git => "https://github.com/Warrenoo/rails-bootstrap-markdown.git"
+#gem 'rails-bootstrap-markdown', :git => "https://github.com/Warrenoo/rails-bootstrap-markdown.git"
 gem 'cells'
 
 
