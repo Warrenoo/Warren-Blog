@@ -9,7 +9,7 @@ set :deploy_user, 'work'
 set :scm, :git
 set :repo_url, 'https://github.com/Warrenoo/Warren-Blog.git'
 
-set :deploy_to, "/project/warren_blog"
+set :deploy_to, "/workspace/warren_blog"
 
 set :deploy_via, :remote_cache
 
@@ -20,7 +20,7 @@ set :puma_conf, "#{shared_path}/puma.rb"
 
 set :keep_releases, 5
 
-set :rbenv_ruby, '2.1.2'
+set :rbenv_ruby, '2.3.0'
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 namespace :deploy do
